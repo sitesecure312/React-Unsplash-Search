@@ -21,6 +21,8 @@ The image data fetched from the Unsplash api https://api.unsplash.com with Autho
 
 It uses Axios, Axios is a lightweight HTTP client based on the $http service.
 
+If you like or dislike the image, the image resource should be added to removed from the new search image resources.
+
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).

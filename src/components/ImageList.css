@@ -4,7 +4,15 @@
     grid-gap:10px;
     /* grid-auto-rows: 10px; */
 }
-
-.image-list img {
+.image-list div {
+	position: relative;
+}
+.image-list div img:first-child {
     width:100%;
+}
+.image-list .top-right {
+	width: 40px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }

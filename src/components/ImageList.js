@@ -3,18 +3,15 @@ import React from 'react';
 import ImageCard from './ImageCard';
 
 class ImageList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div className="container">
 		        <div className="image-list">
 		        	{this.props.selectedImages.map((image) => {
-				        return <ImageCard key={image.id} image={image} onclick={() => this.props.selectImage(image,0)} />
+				        return <ImageCard key={image.id} image={image} type={0} selectImage = {this.props.selectImage} />
 				    })}
 		            {this.props.images.map((image) => {
-				        return <ImageCard key={image.id} image={image} onclick={() => this.props.selectImage(image,1)} />
+				        return <ImageCard key={image.id} image={image} type={1} selectImage = {this.props.selectImage} />
 				    })}
 		        </div>
 		    </div>

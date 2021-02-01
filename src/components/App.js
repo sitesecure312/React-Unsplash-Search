@@ -13,34 +13,37 @@ class App extends React.Component{
             params: {query: term}
         });
         var selectedImages = this.state.selectedImages;
-        for(var i; i < selectedImages.length; i++) {
+        var i;
+        for(i = 0; i < selectedImages.length; i++) {
             if(!selectedImages[i].selected) selectedImages.splice(i, 1);
         }
         var images = this.state.images;
-        for(var i; i < images.length; i++) {
+        for(i = 0; i < images.length; i++) {
             if(images[i].selected) selectedImages.push(images[i]);
         }
-        this.setState({ images: object.data.results, selectedImages: selectedImages })
-
+        this.setState({ images: object.data.results, selectedImages: selectedImages });
     }
-    selectImage(image,index) {
+    selectImage = async (image,index) => {
+        var i;
         if(index === 0) {//selectedImages
-            var images = this.state.selectedImages;
-            for(var i; i < images.length; i++) {
-                if(images[i].id === image.id) {
-                    if(images[i].selected) images[i].selected = false;
-                    else images[i].selected = true;
+            var selectedImages = this.state.selectedImages;
+            for(i = 0; i < selectedImages.length; i++) {
+                if(selectedImages[i].id === image.id) {
+                    if(selectedImages[i].selected) selectedImages[i].selected = false;
+                    else selectedImages[i].selected = true;
                 }
             }
+            this.setState({selectedImages: selectedImages});
         }
         else {
             var images = this.state.images;
-            for(var i; i < images.length; i++) {
+            for(i = 0; i < images.length; i++) {
                 if(images[i].id === image.id) {
                     if(images[i].selected) images[i].selected = false;
                     else images[i].selected = true;
                 }
             }
+            this.setState({images: images});
         }
     }
     // showImages() {

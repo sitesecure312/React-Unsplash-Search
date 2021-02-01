@@ -17,9 +17,9 @@ class ImageCard extends React.Component {
     render() {
         const {description, urls, selected} = this.props.image
         return (
-            <div style={{ gridRowEnd : `span ${this.state.spans}` }}>
+            <div style={{ gridRowEnd : `span ${this.state.spans}` }} onClick={() => this.props.selectImage(this.props.image, this.props.type)}>
                 <img ref={this.imageRef} alt={description} src={urls.regular}/>
-                {selected && <p>selected</p>}
+                {selected ? (<img className="top-right" src={ process.env.PUBLIC_URL + '/checked.png'} />) : (<img className="top-right" src={process.env.PUBLIC_URL + '/unchecked.png'} />) }
             </div>
         )
     }

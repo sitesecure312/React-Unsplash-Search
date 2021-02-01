@@ -4,7 +4,7 @@
 
 ![Image](screenshots/Screenshot_1.png)
 ![Image](screenshots/Screenshot_2.png)
-![Image](screenshots/Screenshot_3.png)
+![Image](screenshots/video.mp4)
 
 ## Quick Overview
 If you have 'npm install', you can run 'npm start'.
